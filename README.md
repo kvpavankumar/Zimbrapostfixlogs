@@ -1,5 +1,5 @@
 # Zimbrapostfixlogs
-postfix mail status log to csv
+
 
 It will export raw postfix log to CSV 
 
