@@ -14,3 +14,23 @@ It will capture below filed from postfix log
 - Status,reason
 
 
+
+
+step 1: su - zimbra
+step 2: vi /opt/zimbra/conf/custom_header_checks
+
+Fill with the following line :
+
+ /^Subject:/ WARN
+ /^subject:/ WARN
+ /filename=\"?(.*)\"?$/ WARN
+
+Modify zimbraMtaHeaderChecks for include custom_header_checks:
+
+Modify zimbraMtaHeaderChecks for include custom_header_checks
+zmprov ms `zmhostname` zimbraMtaHeaderChecks "pcre:/opt/zimbra/conf/postfix_header_checks, pcre:/opt/zimbra/conf/custom_header_checks"
+zmprov mcf zimbraMtaBlockedExtensionWarnRecipient FALSE
+
+Reload Postfix Zimbra:
+
+postfix reload
