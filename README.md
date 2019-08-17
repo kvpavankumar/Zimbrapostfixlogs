@@ -34,3 +34,9 @@ zmprov mcf zimbraMtaBlockedExtensionWarnRecipient FALSE
 Reload Postfix Zimbra:
 
 postfix reload
+
+Run below shell script to dowload logs:
+
+zimbrapostfix.sh
+
+
